@@ -9,6 +9,23 @@
 # File name: diy-part2.sh
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
+# PassWall 源
+echo "src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall.git;packages" >> feeds.conf.default
+echo "src-git passwall_luci https://github.com/xiaorouji/openwrt-passwall.git;luci" >> feeds.conf.default
+
+# IPTVHelper 源码
+rm -rf package/luci-app-iptvhelper
+git clone https://github.com/fuyi200/openwrt-iptvhelper.git package/openwrt-iptvhelper
+ln -sf ../openwrt-iptvhelper/luci-app-iptvhelper package/luci-app-iptvhelper 2>/dev/null || true
+
+# adblock-lean 源码
+rm -rf package/adblock-lean package/luci-app-adblock-lean
+git clone https://github.com/lynxthecat/adblock-lean.git package/adblock-lean
+git clone https://github.com/rickparrish/luci-app-adblock-lean.git package/luci-app-adblock-lean
+
+# OAF 源码
+rm -rf package/OpenAppFilter
+git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 
 echo "开始 自定义（fichen） 配置……"
 echo "========================="
