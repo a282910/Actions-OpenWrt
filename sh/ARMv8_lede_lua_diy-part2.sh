@@ -24,8 +24,8 @@ git clone https://github.com/lynxthecat/adblock-lean.git package/adblock-lean
 git clone https://github.com/rickparrish/luci-app-adblock-lean.git package/luci-app-adblock-lean
 
 # OAF 源码
-rm -rf package/OpenAppFilter
-git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
+# rm -rf package/OpenAppFilter
+# git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 
 echo "开始 自定义（fichen） 配置……"
 echo "========================="
