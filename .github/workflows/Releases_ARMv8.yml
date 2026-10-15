@@ -179,7 +179,7 @@ jobs:
 #      if: (!cancelled())
 #      uses: ophub/flippy-openwrt-actions@0.1.0
 #      env:
-#        OPENWRT_ARMVIRT: https://github.com/fichenx/Actions-OpenWrt/releases/download/${{ inputs.model || 'ARMv8_lede_lua'}}_raw/${{ env.REPO }}-armsr-armv8-generic-rootfs.tar.gz
+#        OPENWRT_ARMVIRT: https://github.com/a282910/Actions-OpenWrt/releases/download/${{ inputs.model || 'ARMv8_lede_lua'}}_raw/${{ env.REPO }}-armsr-armv8-generic-rootfs.tar.gz
 #        PACKAGE_SOC: s905d_s905x3
 #        WHOAMI: fichen
 #        KERNEL_VERSION_NAME: 5.4.210_5.10.136_5.15.74_6.1.20_6.6.27_6.12.32
@@ -195,9 +195,9 @@ jobs:
       uses: ophub/flippy-openwrt-actions@main
       env:
         KERNEL_REPO_URL: ophub/flippy-openwrt-actions
-        OPENWRT_ARMVIRT: https://github.com/fichenx/Actions-OpenWrt/releases/download/${{ inputs.model || 'ARMv8_lede_lua'}}_raw/${{ env.REPO }}-armsr-armv8-generic-rootfs.tar.gz
+        OPENWRT_ARMVIRT: https://github.com/a282910/Actions-OpenWrt/releases/download/${{ inputs.model || 'ARMv8_lede_lua'}}_raw/${{ env.REPO }}-armsr-armv8-generic-rootfs.tar.gz
         PACKAGE_SOC: s905d_s905x3
-        WHOAMI: fichenx
+        WHOAMI: a282910
         KERNEL_VERSION_NAME: 5.4.210_5.10.136_5.15.74_6.1.20_6.6.27_6.12.32_6.18.9
         KERNEL_AUTO_LATEST: true
         GZIP_IMGS: .gz
@@ -231,8 +231,8 @@ jobs:
 
     - name: 从底包中下载所需文件
       run: |
-        wget -O ${{ env.PACKAGED_OUTPUTPATH }}/Packages.tar.gz https://github.com/fichenx/Actions-OpenWrt/releases/download/${{ inputs.model || 'ARMv8_lede_lua'}}_raw/Packages.tar.gz
-        wget -O ${{ env.PACKAGED_OUTPUTPATH }}/${{ env.REPO }}-armsr-armv8-generic.manifest https://github.com/fichenx/Actions-OpenWrt/releases/download/${{ inputs.model || 'ARMv8_lede_lua'}}_raw/${{ env.REPO }}-armsr-armv8-generic.manifest
+        wget -O ${{ env.PACKAGED_OUTPUTPATH }}/Packages.tar.gz https://github.com/a282910/Actions-OpenWrt/releases/download/${{ inputs.model || 'ARMv8_lede_lua'}}_raw/Packages.tar.gz
+        wget -O ${{ env.PACKAGED_OUTPUTPATH }}/${{ env.REPO }}-armsr-armv8-generic.manifest https://github.com/a282910/Actions-OpenWrt/releases/download/${{ inputs.model || 'ARMv8_lede_lua'}}_raw/${{ env.REPO }}-armsr-armv8-generic.manifest
   
     - name: 准备发布简介
       run: |
