@@ -9,6 +9,11 @@
 # File name: diy-part2.sh
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
+# msd_lite 主程序 + LuCI 界面
+rm -rf package/msd_lite package/luci-app-msd_lite
+git clone https://github.com/ximiTech/msd_lite.git package/msd_lite
+git clone https://github.com/ximiTech/luci-app-msd_lite.git package/luci-app-msd_lite
+
 # PassWall 源
 echo "src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall.git;packages" >> feeds.conf.default
 echo "src-git passwall_luci https://github.com/xiaorouji/openwrt-passwall.git;luci" >> feeds.conf.default
