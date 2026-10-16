@@ -10,10 +10,8 @@
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
 # 强制删除 fchomo 和 bypass，打破递归依赖
-rm -rf feeds/fichenx/luci-app-fchomo
 rm -rf feeds/luci/applications/luci-app-bypass
 rm -rf package/luci-app-bypass
-sed -i '/CONFIG_PACKAGE_luci-app-fchomo=y/d' .config
 sed -i '/CONFIG_PACKAGE_luci-app-bypass=y/d' .config
 
 # msd_lite 主程序 + LuCI 界面
