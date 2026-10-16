@@ -197,7 +197,7 @@ git clone -b openwrt-18.06 https://github.com/tty228/luci-app-wechatpush package
 
 #luci-app-bypass
 #git_sparse_clone master "https://github.com/kiddin9/openwrt-packages" "kiddin9" luci-app-bypass && mv -n luci-app-bypass package/luci-app-bypass
-git_svn main https://github.com/fichenx/packages luci-app-bypass
+#git_svn main https://github.com/fichenx/packages luci-app-bypass
 
 #luci-app-npc
 git_svn master https://github.com/Hyy2001X/AutoBuild-Packages luci-app-npc
