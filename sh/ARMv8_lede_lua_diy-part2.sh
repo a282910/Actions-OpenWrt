@@ -23,11 +23,19 @@ rm -rf package/luci-app-iptvhelper
 git clone https://github.com/fuyi200/openwrt-iptvhelper.git package/openwrt-iptvhelper
 ln -sf ../openwrt-iptvhelper/luci-app-iptvhelper package/luci-app-iptvhelper 2>/dev/null || true
 
-
+# 从 OpenWrt 官方 luci 源克隆 adblock-fast 界面
+rm -rf package/luci-app-adblock-fast
+git clone --depth=1 --filter=blob:none --sparse https://github.com/openwrt/luci.git /tmp/luci-official
+cd /tmp/luci-official
+git sparse-checkout set applications/luci-app-adblock-fast
+cp -r applications/luci-app-adblock-fast $GITHUB_WORKSPACE/openwrt/package/luci-app-adblock-fast
+cd $GITHUB_WORKSPACE/openwrt
+rm -rf /tmp/luci-official
 
 # OAF 源码
 # rm -rf package/OpenAppFilter
 # git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
+
 
 echo "开始 自定义（fichen） 配置……"
 echo "========================="
