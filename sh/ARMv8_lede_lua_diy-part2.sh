@@ -9,6 +9,10 @@
 # File name: diy-part2.sh
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
+
+# 添加 helloworld 源
+echo "src-git helloworld https://github.com/fw876/helloworld" >> feeds.conf.default
+
 # 强制删除 fchomo 和 bypass，打破递归依赖
 rm -rf feeds/luci/applications/luci-app-bypass
 rm -rf package/luci-app-bypass
